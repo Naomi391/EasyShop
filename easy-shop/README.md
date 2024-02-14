@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# EasyShop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Group D
 
-## Available Scripts
+## Problem Statement
 
-In the project directory, you can run:
+Physical shopping can often be overwhelming due to the vast array of products available, making it challenging for users to find what they need quickly and efficiently. Additionally, users may face difficulties in comparing products from different brands and making informed purchasing decisions.
 
-### `npm start`
+## Solution Statement
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+EasyShop aims to address these challenges by incorporating features such as personalized product recommendations, user reviews, loyalty programs (e.g., discounts & rewards), and side-by-side product comparison. These features enhance the overall shopping experience, promote informed purchasing decisions, and provide valuable insights into customer behavior and trending products through data analytics tools.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Objective
 
-### `npm test`
+To develop an E-commerce application prototype that supports a diverse range of products and functionalities while assuring seamless navigation and a responsive user interface.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Justification
 
-### `npm run build`
+Almost 50% of Kenyan businesses switched to online business during and after the pandemic.
+More than 60% of the Kenyan population also switched to shopping online.
+According to Google Trends, online shopping in Kenya is estimated to grow by 15% by 2030.
+Creating an e-commerce website is projected to be a success and meet future market demands, especially for small-scale and retail offline businesses.
+Project Features
+Products catalog
+Products information
+Search filter
+Favorites/Wish list
+Product page views
+List of Orders/Shopping Cart
+Rate product
+Customer review
+Checkout
+Payment methods
+Contact Us
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deliverables
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Customers will be able to Login/Register into the website.
+Customers will be able to create an account after submitting their email, address, ID, phone, etc.
+Customers will easily search for products using keywords (name and category) and refine results with filters like price.
+Customers will view detailed product information on the website.
+Customers can compare two similar products side by side.
+Customers can rate and submit reviews for products listed on the website.
+Customers will be able to place orders on the website.
+Customers will use a shopping cart for their purchases.
+Customers will make payments using different payment avenues.
+Customers can choose their mode of shipping.
+Basic pages on the footer (Contact Us, Social Media links etc.) will be provided.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Feel free to reach out for any further inquiries or collaboration opportunities. Happy shopping with EasyShop!
 
-### `npm run eject`
+Thank you for your interest in running the EasyShop React App from our repository. Follow the instructions below to set up and run the application on your local machine.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Before you begin, ensure you have the following installed on your system:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Node.js (v14.0.0 or higher)
+npm (v6.0.0 or higher)
+Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Clone the repository to your local machine:
 
-## Learn More
+bash
+Copy code
+git clone https://github.com/your-username/easyshop-react-app.git
+Navigate to the project directory:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copy code
+cd easyshop-react-app
+Install the project dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+bash
+Copy code
+npm install
+Configuration
+Create a .env file in the root of the project.
 
-### Code Splitting
+Copy the contents of .env.example into .env.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Update the values in .env as needed (e.g., API endpoints, authentication keys).
 
-### Analyzing the Bundle Size
+Running the App
+Once you have completed the setup, you can run the EasyShop React App with the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+bash
+Copy code
+npm start
+The application will be accessible at http://localhost:3000 in your web browser.
 
-### Making a Progressive Web App
+Additional Scripts
+In the project directory, you can also use the following npm scripts:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Build the App for Production:
 
-### Advanced Configuration
+bash
+Copy code
+npm run build
+Run Tests:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+bash
+Copy code
+npm test
+Issues and Contributions
+If you encounter any issues or have suggestions for improvements, please open an issue. Contributions are also welcome through pull requests.
 
-### Deployment
+Thank you for using EasyShop! Happy shopping 🛍️!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### CONTRIBUTORS
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Samuel Wanyua @samwanyua
+Arnold Amusengeri @Arnold-In-Tech
+Victor Kyalo @Victor5771
+Naomi Mogi @Naomi391
