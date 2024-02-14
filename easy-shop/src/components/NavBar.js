@@ -1,11 +1,18 @@
-import { NavLink } from "react-router-dom";
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
-import { useState } from "react"; 
-import Search from "./Search";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link component for navigation
+import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+import Search from './Search';
+import MyCart from './MyCart'; // Import MyCart component
 
 const NavBar = () => {
   const [cart, setCart] = useState(0);
+
+  // Function to handle adding items to the cart
+  const handleAddToCart = () => {
+    // Implement your logic to add items to the cart
+    // For now, let's just increment the cart count
+    setCart(cart + 1);
+  };
 
   return (
     <header className="min-w-[1000px]">
@@ -32,8 +39,9 @@ const NavBar = () => {
               Account
             </a>
           </div>
+          {/* Wrap ShoppingCartIcon with Link and set to prop to the cart page */}
           <Link to={"/checkout"}>
-            <div className="flex pr-3 pl-3">
+            <div className="flex pr-3 pl-3" onClick={handleAddToCart}>
               <ShoppingCartIcon className="h-[48px]" />
               <div className="relative">
                 <div className="absolute right-[9px] font-bold m-2 text-orange-400">
