@@ -46,8 +46,8 @@ const Footer = () => {
             <a href="#" className='text-xl'> <FaLinkedin /> </a>
         </div>
       </div>
-      <div className="w-full mt-4 mb-8 text-center items-center text-amber-400">
-        <p>&copy; 2024 <span className="text-amber-400">easyshop</span> All rights reserved.</p>
+      <div className="w-full mt-4 mb-8 text-center items-center text-white">
+        <p>&copy; 2024 <span className="text-secondary">easyshop</span> All rights reserved.</p>
       </div>
     </footer>
   );
