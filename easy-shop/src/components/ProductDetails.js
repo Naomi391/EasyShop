@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import StarRating from "./StarRating"; // Import the StarRating component
 
 const ProductDetails = () => {
@@ -23,6 +23,11 @@ const ProductDetails = () => {
         console.error("Error fetching data:", error);
       });
   }, [id]);
+
+  const handleAddToCart = () => {
+    // You can add the logic to add the product to the cart here
+    // For simplicity, let's assume it just redirects to the cart page
+  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -58,8 +63,11 @@ const ProductDetails = () => {
           </p>
 
           <div className="mt-4">
-            <button className="bg-black text-green-500 font-bold py-2 px-4 rounded-full border-2  hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-              ADD TO CART
+            <button 
+              className="bg-black text-green-500 font-bold py-2 px-4 rounded-full border-2  hover:bg-gray-800 focus:outline-none focus:shadow-outline"
+              onClick={handleAddToCart}
+            >
+              <Link to="/cart">ADD TO CART</Link>
             </button>
           </div>
         </div>
@@ -69,3 +77,5 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+
