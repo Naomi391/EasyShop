@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import ProductDetails from "./components/ProductDetails";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
+      <Footer />
     </>
   );
 }
