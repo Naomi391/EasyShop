@@ -25,8 +25,7 @@ const ProductDetails = () => {
   }, [id]);
 
   const handleAddToCart = () => {
-    // You can add the logic to add the product to the cart here
-    // For simplicity, let's assume it just redirects to the cart page
+   
   };
 
   if (!product) {
