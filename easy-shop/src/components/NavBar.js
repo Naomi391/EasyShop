@@ -28,9 +28,9 @@ const NavBar = () => {
         <div className="flex items-center m-4">
           <div className="pr-4 pl-4">
             <p className="text-xs xl:text-sm ">Hello, sign in</p>
-            <a className="text-sm xl:text-base font-bold cursor-pointer">
+            <Link to={"/Login"} className="text-sm xl:text-base font-bold cursor-pointer">
               Account
-            </a>
+            </Link>
           </div>
           <Link to={"/checkout"}>
             <div className="flex pr-3 pl-3">
