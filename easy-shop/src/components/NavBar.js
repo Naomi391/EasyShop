@@ -3,6 +3,7 @@ import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { useState } from "react"; 
 import Search from "./Search";
+import HeaderBottom from "./HeaderBottom";
 
 const NavBar = () => {
   const [cart, setCart] = useState(0);
@@ -45,13 +46,7 @@ const NavBar = () => {
           </Link>
         </div>
       </div>
-      <div className="flex bg-primary text-amber-400 space-x-3 text-xs xl:text-sm p-2 pl-6 justify-center space-x-6">
-        <p>Today's Deals</p>
-        <p>Customer Service</p>
-        <p>Registry</p>
-        <p>Gift Cards</p>
-        <p>Sell</p>
-      </div>
+      <HeaderBottom />
     </header>
   );
 };
