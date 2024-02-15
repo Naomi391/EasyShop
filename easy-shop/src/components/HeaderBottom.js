@@ -27,7 +27,7 @@ const HeaderBottom = () => {
           <GiHamburgerMenu />
           All
         </li>
-        <li className="headerHover text-amber-400 ml-72 hover:text-white"><a href="#">Today's Deals</a></li>
+        <li className="headerHover text-amber-400 ml-8 hover:text-white"><a href="#">Today's Deals</a></li>
         <li className="headerHover text-amber-400 ml-8 hover:text-white"><a href="#">Customer Service</a></li>
         <li className="headerHover text-amber-400 ml-8 hover:text-white"><a href="#">Gift Cards</a></li>
       </ul>
@@ -36,7 +36,7 @@ const HeaderBottom = () => {
         <div className="w-full h-screen text-black fixed top-0 left-0 bg-amazon_blue bg-opacity-50">
           <div className="w-full h-full relative">
             <motion.div ref={ref} initial={{x:-500,opacity:0}} animate={{x:0, opacity:1}} transition={{duration:.5}} className="w-[350px] h-full bg-white border border-black">
-              <Link to={"/Login"} className="w-full bg-primary text-white py-2 px-6 flex items-center gap-4">
+              <Link to={"/Login"} className="w-full bg-primary text-white py-2 px-6 text-2xl flex items-center gap-4">
                 <MdAccountCircle />
                 <h3 className="font-titleFont font-bold text-lg tracking-wide">
                   Hello, Sign In
@@ -61,7 +61,7 @@ const HeaderBottom = () => {
                 two="Customer Service"
                 three="Contact us"
               />
-            <span onClick={()=>setSidebar(false)} className="cursor-pointer absolute top-0 left-[300px] w-10 h-10 text-amber-400 flex items-center justify-center bg-transparent text-3xl hover:text-white duration-300">
+            <span onClick={()=>setSidebar(false)} className="cursor-pointer absolute top-0  left-[300px] w-10 h-10 text-amber-400 flex items-center justify-center bg-transparent text-2xl hover:text-white duration-300">
                 <IoIosCloseCircle />
             </span>
             </motion.div>
