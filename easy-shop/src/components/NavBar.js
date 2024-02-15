@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link component for navigation
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import Search from './Search';
 import MyCart from './MyCart'; // Import MyCart component
+import { NavLink } from "react-router-dom";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
+import { useState } from "react"; 
+import HeaderBottom from "./HeaderBottom";
 
 const NavBar = () => {
   const [cart, setCart] = useState(0);
@@ -35,9 +39,9 @@ const NavBar = () => {
         <div className="flex items-center m-4">
           <div className="pr-4 pl-4">
             <p className="text-xs xl:text-sm ">Hello, sign in</p>
-            <a className="text-sm xl:text-base font-bold cursor-pointer">
+            <Link to={"/Login"} className="text-sm xl:text-base font-bold cursor-pointer">
               Account
-            </a>
+            </Link>
           </div>
           {/* Wrap ShoppingCartIcon with Link and set to prop to the cart page */}
           <Link to={"/checkout"}>
@@ -53,13 +57,7 @@ const NavBar = () => {
           </Link>
         </div>
       </div>
-      <div className="flex bg-primary text-amber-400 space-x-3 text-xs xl:text-sm p-2 pl-6 justify-center space-x-6">
-        <p>Today's Deals</p>
-        <p>Customer Service</p>
-        <p>Registry</p>
-        <p>Gift Cards</p>
-        <p>Sell</p>
-      </div>
+      <HeaderBottom />
     </header>
   );
 };

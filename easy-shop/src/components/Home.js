@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Carousel from "./Carousel";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -31,6 +32,7 @@ const Home = () => {
 
   return (
     <div className="container mx-auto mt-8">
+      <Carousel />
       <h1 className="text-3xl mb-4 font-bold text-center">PRODUCTS LIST</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
