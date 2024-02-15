@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { useState } from "react"; 
+import { useState } from "react";
 import Search from "./Search";
 
 const NavBar = () => {
@@ -13,7 +13,12 @@ const NavBar = () => {
         {/* Left */}
         <div className="flex items-center m-4">
           <Link to={"/"}>
-            <h2><span className="text-amber-400"><strong className="text-xl">e</strong>asy</span>Shop</h2>
+            <h2>
+              <span className="text-amber-400">
+                <strong className="text-xl">e</strong>asy
+              </span>
+              Shop
+            </h2>
           </Link>
           <div className="pr-4 pl-4">
             <div className="text-xs xl:text-sm">Deliver to</div>

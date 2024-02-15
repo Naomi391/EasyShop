@@ -7,13 +7,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const apiEndpoint = isNaN(id)
-      ? "https://itproducts.onrender.com/products"
-      : "https://fakestoreapi.com/products";
-
-    console.log("Fetching from API:", apiEndpoint);
-
-    fetch(`${apiEndpoint}/${id}`)
+    fetch(`http://localhost:3000/easyShopItems/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched product data:", data);
@@ -58,7 +52,7 @@ const ProductDetails = () => {
           </p>
 
           <div className="mt-4">
-            <button className="bg-black text-green-500 font-bold py-2 px-4 rounded-full border-2  hover:bg-gray-800 focus:outline-none focus:shadow-outline">
+            <button className="bg-black text-amber-400 font-bold py-2 px-4 rounded-full border-2  hover:bg-gray-800 focus:outline-none focus:shadow-outline">
               ADD TO CART
             </button>
           </div>

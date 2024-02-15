@@ -3,22 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [products2, setProducts2] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("http://localhost:3000/easyShopItems")
       .then((res) => res.json())
       .then((data) => setProducts(data))
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch("https://itproducts.onrender.com/products")
-      .then((res) => res.json())
-      .then((results) => setProducts2(results))
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
@@ -34,7 +24,7 @@ const Home = () => {
       <h1 className="text-3xl mb-4 font-bold text-center">PRODUCTS LIST</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {products.concat(products2).map((product) => (
+        {products.map((product) => (
           <div
             key={product.id}
             className="max-w-md mx-auto bg-white rounded overflow-hidden shadow-lg cursor-pointer"

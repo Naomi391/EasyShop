@@ -2,7 +2,6 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
 import { useNavigate, createSearchParams } from "react-router-dom";
 
-
 const Search = () => {
   const [suggestions, setSuggestions] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
