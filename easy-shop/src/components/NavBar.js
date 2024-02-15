@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import Search from './Search';
 import MyCart from './MyCart'; // Import MyCart component
 import { NavLink } from "react-router-dom";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { useState } from "react"; 
 import HeaderBottom from "./HeaderBottom";
 
 const NavBar = () => {

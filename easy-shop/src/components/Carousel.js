@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 
 const Carousel = () => {
   return (
-    <div className=" bg-black  ">
+    <div className=" bg-black ">
       <Swiper
         loop={true}
         spaceBetween={0}
@@ -18,22 +18,46 @@ const Carousel = () => {
         className="h-[200px]"
       >
         <SwiperSlide className="bg-black">
-          <video className="w-full h-full object-cover" controls muted="muted" autoPlay loop>
+          <video
+            className="w-full h-full object-cover"
+            controls
+            muted="muted"
+            autoPlay
+            loop
+          >
             <source src="./images/v6.mp4" type="video/mp4" />
           </video>
         </SwiperSlide>
         <SwiperSlide className="bg-black">
-          <video className="w-full h-full object-cover" controls muted="muted" autoPlay loop>
+          <video
+            className="w-full h-full object-cover"
+            controls
+            muted="muted"
+            autoPlay
+            loop
+          >
             <source src="./images/v3.mp4" type="video/mp4" />
           </video>
         </SwiperSlide>
         <SwiperSlide className="bg-black">
-          <video className="w-full h-full object-cover" controls muted="muted" autoPlay loop>
+          <video
+            className="w-full h-full object-cover"
+            controls
+            muted="muted"
+            autoPlay
+            loop
+          >
             <source src="./images/v4.mp4" type="video/mp4" />
           </video>
         </SwiperSlide>
         <SwiperSlide className="bg-black">
-          <video className="w-full h-full object-cover" controls muted="muted" autoPlay loop>
+          <video
+            className="w-full h-full object-cover"
+            controls
+            muted="muted"
+            autoPlay
+            loop
+          >
             <source src="./images/v5.mp4" type="video/mp4" />
           </video>
         </SwiperSlide>

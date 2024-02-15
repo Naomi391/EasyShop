@@ -5,21 +5,13 @@ import Carousel from "./Carousel";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [products2, setProducts2] = useState([]);
+  const [hoveredProductId, setHoveredProductId] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("http://localhost:3000/easyShopItems")
       .then((res) => res.json())
       .then((data) => setProducts(data))
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch("https://itproducts.onrender.com/products")
-      .then((res) => res.json())
-      .then((results) => setProducts2(results))
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
@@ -30,28 +22,52 @@ const Home = () => {
     navigate(productUrl);
   };
 
-  return (
-    <div className="container mx-auto mt-8">
-      <Carousel />
-      <h1 className="text-3xl mb-4 font-bold text-center">PRODUCTS LIST</h1>
+  const handleMouseEnter = (productId) => {
+    setHoveredProductId(productId);
+  };
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  const handleMouseLeave = () => {
+    setHoveredProductId(null);
+  };
+
+  const addToCart = (productId) => {
+    // Implement your addToCart functionality here
+    console.log("Product added to cart:", productId);
+  };
+
+  return (
+    <div className="container mt-8">
+      <Carousel />
+      <div className="grid grid-cols-3 gap-4">
         {products.concat(products2).map((product) => (
           <div
             key={product.id}
-            className="max-w-md mx-auto bg-white rounded overflow-hidden shadow-lg cursor-pointer"
+            className="relative bg-white rounded overflow-hidden shadow-lg cursor-pointer"
             onClick={() => handleImageClick(product.id)}
+            onMouseEnter={() => handleMouseEnter(product.id)}
+            onMouseLeave={handleMouseLeave}
+            style={{ width: "100%" }}
           >
             <img
-              className="w-full h-64 object-cover border-b-2 border-gray-300"
+              className="w-full h-auto object-contain border-b-2 border-gray-300"
               src={product.image || product.img}
               alt={product.title}
+              style={{ maxHeight: "300px" }}
             />
             <div className="p-4">
-              <div className="font-bold text-xl mb-2">{product.title}</div>
-              <p className="text-gray-700 text-base mb-2">
-                Price: ${product.price}
-              </p>
+              <div className="text-gray-700 text-base mb-2">
+                {product.title}
+              </div>
+              <p className="font-bold text-xl mb-2">Price: ${product.price}</p>
+              {hoveredProductId === product.id && (
+                <button
+                  className="bg-black text-green-500 font-bold py-2 px-4 rounded-full border-2  hover:bg-gray-800 focus:outline-none focus:shadow-outline"
+                  onClick={() => addToCart(product.id)}
+                  style={{ transition: "opacity 0.3s" }}
+                >
+                  Add to Cart
+                </button>
+              )}
             </div>
           </div>
         ))}
