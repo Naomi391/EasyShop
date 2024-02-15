@@ -32,9 +32,10 @@ const Home = () => {
           >
             <img
               className="w-full h-64 object-cover border-b-2 border-gray-300"
-              src={product.image || product.img}
+              src={product.image}
               alt={product.title}
             />
+
             <div className="p-4">
               <div className="font-bold text-xl mb-2">{product.title}</div>
               <p className="text-gray-700 text-base mb-2">
