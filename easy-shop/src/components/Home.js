@@ -1,11 +1,14 @@
+// Home.js
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Carousel from "./Carousel";
+import MyCart from "./MyCart";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [products2, setProducts2] = useState([]);
   const [hoveredProductId, setHoveredProductId] = useState(null);
+  const [cartCount, setCartCount] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,8 +34,8 @@ const Home = () => {
   };
 
   const addToCart = (productId) => {
-    // Implement your addToCart functionality here
     console.log("Product added to cart:", productId);
+    setCartCount((prevCount) => prevCount + 1);
   };
 
   return (
@@ -72,6 +75,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <MyCart products={products} cartCount={cartCount} />
     </div>
   );
 };

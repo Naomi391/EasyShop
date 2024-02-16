@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import StarRating from "./StarRating";
+import { useParams } from "react-router-dom";
+import StarRating from "./StarRating"; // Import the StarRating component
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -18,14 +18,12 @@ const ProductDetails = () => {
       });
   }, [id]);
 
-  const handleAddToCart = () => {};
-
   if (!product) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className="container mx-auto mt-8 ">
       <h1 className="text-3xl mb-4 font-bold text-center">Product Details</h1>
 
       <div className="max-w-3xl mx-auto bg-white rounded overflow-hidden shadow-lg m-4 flex">
@@ -54,11 +52,8 @@ const ProductDetails = () => {
           </p>
 
           <div className="mt-4">
-            <button
-              className="bg-black text-green-500 font-bold py-2 px-4 rounded-full border-2  hover:bg-gray-800 focus:outline-none focus:shadow-outline"
-              onClick={handleAddToCart}
-            >
-              <Link to="/cart">ADD TO CART</Link>
+            <button className="bg-black text-amber-400 font-bold py-2 px-4 rounded-full border-2  hover:bg-gray-800 focus:outline-none focus:shadow-outline">
+              ADD TO CART
             </button>
           </div>
         </div>
