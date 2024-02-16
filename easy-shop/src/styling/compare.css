@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif, 'Times New Roman', Times, serif;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "image1 image1 image1 image1"
+    "text text text text"
+    "text text text text";
+  justify-items: center;
+  grid-gap: 20px;
+  padding-top: 1rem;
+  grid-template-rows: auto 1fr;
+}
+
+.image {
+  grid-area: image1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*========================= Products Card*/
+
+.products .product {
+  display:flex;
+  flex-direction: column;
+}
+
+.products .product .priceSelect{
+  display: flex;
+  justify-content: space-between;  
+  padding-top: 5px;
+}
+
+.products .product .label {
+  display:flex;
+  font-size:larger;
+  flex-direction: column;
+  padding-top: 0.45rem;
+  justify-content: left;
+}
+
+.products .product .text {
+  display:flex;
+  font-size:medium;
+  justify-content: left;
+  line-height: 1.8rem;
+  padding-left: 0.2rem;
+}
+
+.products .product .form-control{
+  display:flex;
+  font-size:medium;
+  justify-content: right;
+  padding-top: 4px;
+}
+
+
+.products .product .form-control .checkbx{
+  font-size: x-large;
+} 
+
+
+.products .product:first-of-type {
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.products .product:last-of-type {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom: grey solid 0.1rem;
+}
+
+
+/*========================= Filter products*/
+
+.FilterProducts {
+  border: solid black 0.1rem;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  padding: 6px 10px 6px 10px;
+  align-items: center;
+}
+
+
+select{
+  width:80px;
+  font-size: 16px;
+  padding: 5px 120px 5px 5px;
+  margin-top: 4px;
+  color: black;
+  background-color: #71F25C;
+  border-width: 3px;
+  border-color: black;
+  justify-content: left;
+  display: flex;
+}
+
+
+.searchProduct input[type="text"]{
+  background: rgb(186, 186, 169);
+  color: black;
+  font-size: large;
+  border-radius: 20px;
+}
+
+
+.addProduct{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+  text-align: center; 
+  font-size: x-large;
+  font-weight: bolder; 
+}
+
+
+.compare{
+  color: black;
+  display: block;
+  background-color: #71F25C;
+  border: solid black 0.1rem;
+  font-size: large;
+  margin: 0 50px 18px 0;
+}
+
+.checkedForDisplay{
+  grid-template-areas:
+    "image1 image1"
+    "text text"
+    "text text";
+  justify-items: center;
+  display: grid;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 1fr)); 
+  padding: 0.8rem 10rem 0.8rem 24rem;
+}
+
+
+.checkedProductCard .productImage{
+  height: 250px;
+  object-fit: cover;
+}
+
+
+hr{
+  height:"2px";
+  border-width:"0";
+  color:"gray";
+  background-color :"gray";
+}
+/*================================================================================*/
+
