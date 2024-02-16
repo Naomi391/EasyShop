@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import StarRating from "./StarRating"; // Import the StarRating component
 
+
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
