@@ -22,10 +22,32 @@ function LoginUser() {
     });
   }
 
+  // Authentication tokens
+  const authTokens = [
+    {
+    username: "sam@gmail.com",
+    password: "sams"
+  },
+  {
+    username: "naomi@gmail.com",
+    password: "naomis"
+  },
+  {
+    username: "victor@gmail.com",
+    password: "victors"
+  }]
+
+
   function handleSubmit(e) {
     e.preventDefault();
-    navigate("/");
+    // Authentication condition
+    if (authTokens.some(token => token.password === formData.password)){
+      navigate("/");    
+    }else{
+      alert("Wrong PassWord!!! Try Again!")
+    }  
   }
+
 
   return (
     <div className="login-wrapper">
