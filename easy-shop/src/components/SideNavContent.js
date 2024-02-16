@@ -3,7 +3,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 
 const SideNavContent = ({ title, one, two, three }) => {
   return (
-    <div className="py-3 border-b-[1px] border-b-gray-300 max-h-36 overflow-y-auto ">
+    <div className="py-3 border-b-[1px] border-b-gray-300 max-h-36 overflow-y-auto z-[8000]">
       <h3 className="text-lg font-titleFont font-semibold mb-1 px-6">
         {title}
       </h3>
