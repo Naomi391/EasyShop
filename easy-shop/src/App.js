@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import ProductDetails from "./components/ProductDetails";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import Comparison from "./components/Comparison";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Login" element={<LoginUser />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/Comparison" element={<Comparison />} />
       </Routes>
       <Footer />
     </>

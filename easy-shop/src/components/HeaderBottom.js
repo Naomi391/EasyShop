@@ -30,6 +30,7 @@ const HeaderBottom = () => {
         <li className="headerHover text-amber-400 ml-72 hover:text-white"><a href="#">Today's Deals</a></li>
         <li className="headerHover text-amber-400 ml-8 hover:text-white"><a href="#">Customer Service</a></li>
         <li className="headerHover text-amber-400 ml-8 hover:text-white"><a href="#">Gift Cards</a></li>
+        <li className="headerHover text-amber-400 ml-8 hover:text-white"><Link to={"/Comparison"}><a href="#">Compare Products</a></Link></li>
       </ul>
       {/* sidebar */}
       {sidebar && (
