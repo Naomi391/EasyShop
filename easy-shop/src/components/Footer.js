@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-wrap bg-primary p-6  md:items-top justify-center">
       <div className="w-full md:w-1/4 mb-10 mt-10">
-        <h4 className="relative mb-8 font-medium text-md uppercase text-white">Easyshop</h4>
+        <h4 className="relative mb-8 font-bold text-md uppercase text-white">Easyshop</h4>
         <ul className="list-none font-light">
           <li><a href="#" className="block text-sm  text-white no-underline transition duration-400">About us</a></li>
           <li><a href="#" className="block text-sm  text-white no-underline transition duration-400">Contact us</a></li>
@@ -18,7 +18,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="w-full md:w-1/4 mb-10 mt-10">
-        <h4 className="relative mb-8 font-medium text-md uppercase text-white">Quick Links</h4>
+        <h4 className="relative mb-8 font-bold text-md uppercase text-white">Quick Links</h4>
         <ul className="list-none font-light">
           <li><a href="#" className="block text-sm  text-white no-underline transition duration-400">Share Location</a></li>
           <li><a href="#" className="block text-sm  text-white no-underline transition duration-400">Orders Tracking</a></li>
@@ -28,7 +28,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="w-full md:w-1/4 mb-10 mt-10">
-        <h4 className="relative mb-8 font-medium text-md uppercase  text-white">Legal terms</h4>
+        <h4 className="relative mb-8 font-bold text-md uppercase  text-white">Legal terms</h4>
         <ul className="list-none font-light">
           <li><a href="#" className="block text-sm  text-white no-underline transition duration-400">Terms and Conditions</a></li>
           <li><a href="#" className="block text-sm  text-white no-underline transition duration-400">Privacy Policy</a></li>
@@ -38,7 +38,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="w-full md:w-1/4 mb-10 mt-10">
-        <h4 className="relative mb-8 font-medium text-md  uppercase text-white">Follow us</h4>
+        <h4 className="relative mb-8 font-bold text-md  uppercase text-white">Follow us</h4>
         <div className="links flex space-x-3 text-white font-light">
             <a href="#" className='text-xl'> <FaFacebook /> </a>
             <a href="#" className='text-xl'> <FaInstagram /> </a>
