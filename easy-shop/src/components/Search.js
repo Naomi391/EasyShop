@@ -2,7 +2,6 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
 import { useNavigate, createSearchParams } from "react-router-dom";
 
-
 const Search = () => {
   const [suggestions, setSuggestions] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,8 +42,8 @@ const Search = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button onClick={onHandleSubmit} className="w-[45px]">
-          <MagnifyingGlassIcon className="h-[27px] m-auto stroke-slate-900" />
+        <button onClick={onHandleSubmit} className="w-[45px] bg-transparent">
+           <MagnifyingGlassIcon className="h-[27px] m-auto stroke-slate-900 " /> 
         </button>
       </div>
       {suggestions && (
