@@ -157,7 +157,7 @@ function Comparison(){
             onSearchChange1={onSearchChange1} 
             onSearchChange2={onSearchChange2} 
             onCategoryChange={handleCategoryChange} 
-            categories={categories} 
+            categories={CATEGORIES} 
             checkedProducts1={checkedProducts1}
             checkedProducts2={checkedProducts2}
             onCompare={handleCompare} 

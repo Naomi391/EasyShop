@@ -1,5 +1,5 @@
 import React from "react";
-import '../../node_modules/font-awesome/css/font-awesome.min.css'; // install this
+// import '../../node_modules/font-awesome/css/font-awesome.min.css'; // install this
 
 
 // ============================================================================= //
