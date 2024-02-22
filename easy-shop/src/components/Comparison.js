@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Product from "./Product";
 import FilterProducts from "./FilterProducts";
 import '../styling/compare.css';
+import { useNavigate } from 'react-router-dom';
 
 
 // ======================================================================================== //
@@ -25,7 +26,7 @@ function Comparison(){
         .then((response)=> response.json())
         .then((data)=> {
             setProductsData(data);
-            setCATEGORIES(Array.from(new Set(data.map(item => item.category))));  
+            setCATEGORIES(Array.from(new Set(data.map(item => item.category)))); 
             })                                                
         }, []);                                                                  
     //==================================
@@ -35,7 +36,6 @@ function Comparison(){
     //Product display catalogue
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [search1, setSearch1] = useState('');
-    const [search2, setSearch2] = useState('');
 
     function handleCategoryChange(event) {
         setSelectedCategory(event.target.value);
@@ -43,10 +43,6 @@ function Comparison(){
 
     function onSearchChange1(event) {
         setSearch1(event.target.value);    
-    }
-
-    function onSearchChange2(event) {
-        setSearch2(event.target.value);    
     }
 
     // === This is the sort function
@@ -60,20 +56,16 @@ function Comparison(){
         return 0;
     }
 
-    function onSortChange(event){
+    function onSortChange(){
         const sortedArray = [...productsData].sort(compare);
         setProductsData(sortedArray); 
     }
 
-
     const itemsToDisplay = productsData.filter((item) => {
-    //if (selectedCategory === "All") return true;
-    if (selectedCategory === item.category){
-        return item.category === selectedCategory;}
+      //if (selectedCategory === "All") return true;
+      return item.category === selectedCategory;
     }).filter((item) => {  
         return item.title.toLowerCase().includes(search1.toLowerCase())
-    }).filter((item) => {  
-        return item.title.toLowerCase().includes(search2.toLowerCase())
     })  
     // ==================================================  
 
@@ -84,64 +76,73 @@ function Comparison(){
     const [comparisonData, setComparisonData] = useState([]);   
 
     function onChecked(event, title, amount, image){  
-
-    let selectedObj;
-    if (event.target.checked){  
-        event.target.checked = true;
-
-        selectedObj= {
-        "title": title, 
-        "amount": amount,
-        "image": image
-        }
-
-        setCheckedProducts([...checkedProducts, selectedObj]); 
-        const compArray = [...comparisonData, selectedObj.title]
-        setComparisonData(compArray);
-        
-        // check if two items selected and alert if true
-        if (comparisonData.length == 2){
-        alert("Only 2 Items Allowed!")
-        }      
-    }else{
-        event.target.checked = false;
-        selectedObj={};
-        // *** We need to update the comparisonData array when we uncheck box ***
-    }      
+    
+        let selectedObj;
+    
+        // check if two items selected on checking a third item and alert user
+        if (comparisonData.length === 2 && event.target.checked){
+          alert("Only 2 Items Allowed!")
+          event.target.checked = false;
+        }else if (comparisonData.length < 2 && event.target.checked){   // if checked    
+    
+          selectedObj= {        // obtain data of the checked item
+            "title": title, 
+            "amount": amount,
+            "image": image
+          }
+    
+          event.target.checked = true;
+    
+          setCheckedProducts([...checkedProducts, selectedObj]); 
+          const compArray = [...comparisonData, selectedObj.title]
+          setComparisonData(compArray);        
+            
+        }else if (!event.target.checked){                             // if unchecked
+          // update the checkedProducts and comparisonData array when we uncheck box
+          let removeIndex = checkedProducts.map(item => item.title).indexOf(title);
+          checkedProducts.splice(removeIndex, 1)
+          comparisonData.splice(removeIndex, 1)
+    
+          setCheckedProducts([...checkedProducts])
+          setComparisonData([...comparisonData])
+        }        
     }
+    
 
-    // the two checked products displayed below search bars
+    // The two checked products to be displayed
     let checkedProducts1 = checkedProducts;
     let checkedProducts2 = checkedProducts;  
-    if (checkedProducts.length === 2){
-    checkedProducts1 = checkedProducts[0]
-    checkedProducts2 = checkedProducts2[1]
+    if (checkedProducts.length === 1){
+        checkedProducts1 = checkedProducts[0]
+    }else if(checkedProducts.length === 2){
+        checkedProducts1 = checkedProducts[0]
+        checkedProducts2 = checkedProducts[1]
     }
 
 
     // Comparison display
     // ===OnClick: Obtain product data for comparison onClicking compare button
-    const [comparisonArray, setComparisonArray] = useState([]);
-    let dataArray = [];
-
-    function handleCompare(event){
-
-        if (comparisonData.length < 2){
-            alert("Please add 2 items!")
-        }else{
-            // Obtain description data of the checked items
-            let checkedArray1 = productsData.filter(function (el) {
-            return el.title === comparisonData[0]
-            });
-            let checkedArray2 = productsData.filter(function (el) {
-            return el.title === comparisonData[1]
-            });
-            
-            dataArray = [...comparisonArray, checkedArray1, checkedArray2];     
-            setComparisonArray(dataArray); 
-            // Stuck here!!! Cannot set state inside a click event   
-        }
-        // console.log(dataArray)
+    const navigate = useNavigate();
+  
+    const handleCompare = () => {
+  
+      let dataArray = [];
+  
+      if (comparisonData.length < 2){
+        alert("Please add 2 items!")
+        return;     
+      }else{
+        // Obtain description data of the checked items
+        let checkedArray1 = productsData.filter(function (el) {
+          return el.title === comparisonData[0]
+        });
+        let checkedArray2 = productsData.filter(function (el) {
+          return el.title === comparisonData[1]
+        });
+        
+        dataArray = [...checkedArray1, ...checkedArray2];     
+      }
+      navigate('/Comparison/CompareDetails', {state:{...dataArray}})    
     }
     // ==================================================  
     
@@ -153,9 +154,7 @@ function Comparison(){
             <FilterProducts 
             onSortChange={onSortChange} 
             search1={search1} 
-            search2={search2} 
             onSearchChange1={onSearchChange1} 
-            onSearchChange2={onSearchChange2} 
             onCategoryChange={handleCategoryChange} 
             categories={CATEGORIES} 
             checkedProducts1={checkedProducts1}
@@ -166,8 +165,8 @@ function Comparison(){
 
             {/* display a table of products using Product component */}
             <ul className="products">
-                {itemsToDisplay.map((item) => (
-                <li key={item.id} className="product">
+                {itemsToDisplay.map((item, index) => (
+                <li key={index} className="product">
                     <Product image={item.image} title={item.title} amount={item.price} toggleCheckbox={onChecked} />
                 </li>
                 ))}

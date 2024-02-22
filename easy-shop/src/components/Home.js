@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Carousel from "./Carousel";
 
-const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [products2, setProducts2] = useState([]);
+const Home = ({productsToDisplay}) => {
   const [hoveredProductId, setHoveredProductId] = useState(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    fetch("http://localhost:3000/easyShopItems")
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
 
   const handleImageClick = (productId) => {
     const productUrl = `/product/${productId}`;
@@ -39,7 +28,7 @@ const Home = () => {
     <div className="container mt-8">
       <Carousel />
       <div className="grid grid-cols-3 gap-4">
-        {products.concat(products2).map((product) => (
+        {productsToDisplay.map((product) => (
           <div
             key={product.id}
             className="relative bg-white rounded overflow-hidden shadow-lg cursor-pointer"
