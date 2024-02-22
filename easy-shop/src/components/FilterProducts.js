@@ -10,7 +10,7 @@ import React from "react";
 // - Sorts products based on price 
 // ============================================================================= //
 
-function FilterProducts({ checkedProducts1, checkedProducts2, categories, onCategoryChange, search1, search2, onSearchChange1, onSearchChange2, onSortChange, onCompare, selectedCategory }) {
+function FilterProducts({ checkedProducts1, checkedProducts2, categories, onCategoryChange, search1, onSearchChange1, onSortChange, onCompare, selectedCategory }) {
 
   return (
     <>
@@ -31,8 +31,10 @@ function FilterProducts({ checkedProducts1, checkedProducts2, categories, onCate
  
       <div className="searchProduct">
         <input type="text" name="search" placeholder="Search..." value={search1} onChange={onSearchChange1}/>      
+      </div>
+
+      <div className="searchProduct">
         <p>Product 1 </p>
-          {/* checked product 1 */}
       </div>
 
       <div className="add">
@@ -43,7 +45,6 @@ function FilterProducts({ checkedProducts1, checkedProducts2, categories, onCate
       </div>
 
       <div className="searchProduct">
-        <input type="text" name="search" placeholder="Search..." value={search2} onChange={onSearchChange2}/>      
         <p>Product 2 </p>
       </div>
 

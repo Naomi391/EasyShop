@@ -6,7 +6,7 @@ import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import HeaderBottom from "./HeaderBottom";
 
-const NavBar = () => {
+const NavBar = ({handleCategoryChange, handleSearchChange, selectedCategory, searchTerm, allCategories}) => {
   const [cart, setCart] = useState(0);
 
   // Function to handle adding items to the cart
@@ -31,7 +31,7 @@ const NavBar = () => {
         </div>
         {/* Middle */}
         <div className="flex grow relative items-center">
-          <Search />
+          <Search handleCategoryChange={handleCategoryChange} handleSearchChange={handleSearchChange} selectedCategory={selectedCategory} searchTerm={searchTerm} allCategories={allCategories} />
         </div>
         {/* Right */}
         <div className="flex items-center m-4">

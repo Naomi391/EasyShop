@@ -142,7 +142,7 @@ select{
   grid-column-gap: 8px;
   grid-row-gap: 8px;
   grid-template-columns: repeat(auto-fit, minmax(max-content, 1fr)); 
-  padding: 0.8rem 10rem 0.8rem 24rem;
+  padding: 0.8rem 0rem 0.8rem 34rem;
 }
 
 
